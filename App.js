@@ -1,26 +1,20 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
-import FadeInOut from './src/screens/FadeInOut';
-import Translate from './src/screens/Translate';
-import Scale from './src/screens/Scale';
-import Interpolation from './src/screens/Interpolation';
+import SpringAnimation from './src/screens/springAnimations/spring';
+import AnimatedEvent from './src/screens/animatedEvent/animatedEvent';
+import FadeInOut from './src/screens/timingAnimations/FadeInOut';
+import Translate from './src/screens/timingAnimations/Translate';
+import Scale from './src/screens/timingAnimations/Scale';
+import Interpolation from './src/screens/timingAnimations/Interpolation';
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <View style={{flex:1}}>
       <StatusBar style="auto" />
-      <Interpolation/>
+      <AnimatedEvent/>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

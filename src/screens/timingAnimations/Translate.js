@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, Animated, TouchableWithoutFeedback } from "react-native";
+import { StyleSheet, Easing, View, Animated, TouchableWithoutFeedback } from "react-native";
 
 export default class Translate extends Component {
   state = {
@@ -9,7 +9,12 @@ export default class Translate extends Component {
     Animated.timing(this.state.animation, {
       toValue: 300,
       duration: 1500,
-      useNativeDriver:false
+      useNativeDriver:false,
+      easing: Easing.back(5),
+      // easing: Easing.bounce,
+      // easing: Easing.elastic(5),
+      // easing: Easing.bezier(.70, 1, .86, .23),
+
     }).start(() => {
       this.state.animation.setValue(0);
     });
